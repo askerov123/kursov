@@ -2,7 +2,7 @@
 <head>
 Параметры страницы
 </head>
-<body>
+<body> <I"am color: red; font-size: 34px>
 <H2>Маркированный список</H2>
 <ul type=’circle’>
 <li>Яблоко</li>
