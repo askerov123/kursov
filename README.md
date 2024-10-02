@@ -1,8 +1,8 @@
 # <html>
 <head>
-Параметры страницы
+<link src="my.css" rel="sylesheet">
 </head>
-<body> <I"am color: red; font-size: 34px>
+<body> <I"am color=red; font-size: 34px>
 <H2>Маркированный список</H2>
 <ul type=’circle’>
 <li>Яблоко</li>
