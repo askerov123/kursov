@@ -34,7 +34,7 @@
 Петров Петр Петрович 1878
 </pre>
 <font color=’red’></font><p> 
-<A HREF=’https://rutube.ru/video/7d6544157e1b8b42fc9e8a6fbcb47abe/?r=wd’>мултик</A> - ссылка на ресурс в Интернет.
+<A HREF=’https://rutube.ru/video/7d6544157e1b8b42fc9e8a6fbcb47abe/?r=wd’>’https://rutube.ru/video/7d6544157e1b8b42fc9e8a6fbcb47abe/?r=wd</A> - ссылка на ресурс в Интернет.
 <sup>конец.</sup></p>
 <img src="pngl.jpg">
 </body>
