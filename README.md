@@ -1,4 +1,4 @@
-# <html>
+ <html>
 <head>
 <link src="my.css" rel="sylesheet">
 </head>
@@ -35,8 +35,7 @@
 </pre>
 <font color=’red’></font><p> 
 <A HREF=’https://rutube.ru/video/7d6544157e1b8b42fc9e8a6fbcb47abe/?r=wd’>’https://rutube.ru/video/7d6544157e1b8b42fc9e8a6fbcb47abe/?r=wd</A> - ссылка на ресурс в Интернет.
-  <p style="color: red; font-size: 18px;">Текст с красным цветом и размером шрифта 18px</p>
-  <A HREF=’INDEX2.HTML’ target=’_blank’>самостоятельная работа </A>
+ <A HREF=’INDEX2.HTML’ target=’_blank’>самостоятельная работа </A>
 <sup>конец.</sup></p>
 <img src="pngl.jpg">
 </body>
