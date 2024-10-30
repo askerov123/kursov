@@ -1,4 +1,4 @@
- <html>
+<html>
 <head>
 <link src="my.css" rel="sylesheet">
 </head>
