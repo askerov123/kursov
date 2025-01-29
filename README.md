@@ -3,6 +3,12 @@
 <link src="my.css" rel="sylesheet">
 </head>
 <body> <I"am color=red; font-size: 34px>
+ {
+    background-image: url('path/to/your/image.jpg');
+    background-repeat: no-repeat; /* Повторение изображения */
+    background-position: center;   /* Положение изображения */
+    background-size: cover;        /* Растягивание изображения на всю область */
+}
 <H2>Маркированный список</H2>
 <ul type=’circle’>
 <li>Яблоко</li>
