@@ -5,5 +5,5 @@ background-image: url('myjpg.jpg');
 background-repeat: no-repeat; /* Повторение изображения */
 background-position: center;   /* Положение изображения */
 background-size: cover;        /* Растягивание изображения на всю область */     
-rgba(0, 0, 0, 0.5)     
+opacity: 0.5;    
 }
