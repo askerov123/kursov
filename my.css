@@ -1,7 +1,7 @@
 body{color:green;
 width:100%;
 margin:0px auto;
-background-image: url('myjpg.jpg');
+background-image: url('images.img');
 background-repeat: no-repeat; /* Повторение изображения */
 background-position: center;   /* Положение изображения */
 background-size: cover;        /* Растягивание изображения на всю область */     
