@@ -52,7 +52,168 @@
 </ol>
 Текст страницы 
 <font color="#FF0000"></fon>
-<pre>Свойство-сокращение для границы в CSS
+<pre> Фиксированное позиционирование в CSS
+Сейчас мы разберемся с фиксированным позиционированием. Оно похоже на абсолютное, разница проявляется в том, как ведут себя эти типы позиционирования при наличии полосы прокрутки.
+
+При прокручивании страницы абсолютно спозиционированные элементы будут прокручиваться вместе со страницей. Смотрите пример:
+
+<div id="elem"></div>
+<div id="content">
+	long text...
+</div>
+#elem {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+
+#content {
+	margin: 0 auto;
+	width: 300px;
+	text-align: justify;
+	font: 16px Arial;
+}
+	Фиксированное позиционирование в CSS
+Сейчас мы разберемся с фиксированным позиционированием. Оно похоже на абсолютное, разница проявляется в том, как ведут себя эти типы позиционирования при наличии полосы прокрутки.
+
+При прокручивании страницы абсолютно спозиционированные элементы будут прокручиваться вместе со страницей. Смотрите пример:
+
+<div id="elem"></div>
+<div id="content">
+	long text...
+</div>
+#elem {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+
+#content {
+	margin: 0 auto;
+	width: 300px;
+	text-align: justify;
+	font: 16px Arial;
+}Центрирование строчно-блочных элементов в CSS
+Для примера давайте поставим строчно-блочные элементы по центру:
+
+<div class="parent">
+	<span class="child">text</span>
+	<span class="child">text</span>
+	<span class="child">text</span>
+</div>
+.parent {
+	text-align: center;
+	padding: 10px 0;
+	border: 1px solid red;
+}
+.child {
+	display: inline-block;
+	padding: 10px 20px;
+	border: 1px solid green;
+}
+Результат выполнения кода:
+
+
+№1⊗mkPmBMIBAC
+
+Даны дивы внутри некоторого родителя:
+
+<div class="parent">
+	<div class="child">text 1</div>
+	<div class="child">text 2</div>
+	<div class="child">text 3</div>
+</div>
+.parent {
+	padding: 10px 0;
+	border: 1px solid red;
+}
+.child {
+	padding: 10px;
+	border: 1px solid green;
+}
+Преобразуйте дивы-потомки в строчно-блочные элементы, задайте им горизонтальный margin в 5px, а затем отцентрируйте их по горизонтали относительно своего родителя.
+	Несколько строчно-блочных элементов рядом в CSS
+Если расположить несколько строчно-блочных элементов рядом, то они выстроятся в ряд, подобно строчным элементам:
+
+<span>text</span>
+<span>text</span>
+<span>text</span>
+span {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 20px;
+	border: 1px solid red;
+	display: inline-block;
+}Несколько строчно-блочных элементов рядом в CSS
+Если расположить несколько строчно-блочных элементов рядом, то они выстроятся в ряд, подобно строчным элементам:
+
+<span>text</span>
+<span>text</span>
+<span>text</span>
+span {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 20px;
+	border: 1px solid red;
+	display: inline-block;
+}
+	Отступы margin для разных сторон в CSS
+Для того, чтобы задать разные отступы для разных сторон существуют отдельные свойства: margin-left - для левой стороны, margin-right - для правой, margin-top - для верхней и margin-bottom - для нижней.
+
+Давайте посмотрим на примере:
+
+<div id="parent">
+	<div id="child"></div>
+</div>
+#parent {
+	width: 300px;
+	border: 1px solid red;
+}
+#child {
+	margin-top:    10px; /* сверху */
+	margin-right:  20px; /* справа */
+	margin-bottom: 30px; /* снизу */
+	margin-left:   40px; /* слева */
+	
+	height: 100px;
+	border: 1px solid green;
+}
+	Четыре значения скругления для разных углов CSS
+Если задано четыре значения, то первое значение задает скругление для верхнего левого угла, второе - для верхнего правого, третье - для нижнего правого угла, а четвертое - для нижнего левого угла:
+
+<div id="elem"></div>
+#elem {
+	width: 300px;
+	height: 100px;
+	border: 1px solid red;
+	border-radius: 10px 20px 30px 40px;
+}
+	Создание круга в CSS
+Скругление в половину ширины и высоты сделает круг:
+
+<div id="elem"></div>
+#elem {
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	border: 1px solid red;
+}
+	Два значения скругления для разных углов CSS
+Если задано два значения, то первое значение задает скругление для для верхнего левого и нижнего правого, второе - верхнего правого и нижнего левого углов:
+
+<div id="elem"></div>
+#elem {
+	width: 300px;
+	height: 100px;
+	border: 1px solid red;
+	border-radius: 10px 40px;
+	Свойство-сокращение для границы в CSS
 Так же, как и для шрифтов, для границ тоже существует свойство-сокращение border, которое мы можем использовать вместо того, чтобы писать 3 разных свойства для толщины, цвета и типа границы. В этом свойстве мы можем просто перечислить значения для границы в любом порядке.
 
 Давайте посмотрим на примере. Пусть у нас есть вот такая граница:
