@@ -53,6 +53,200 @@
 Текст страницы 
 <font color="#FF0000"></fon>
 <pre>
+	Простые одноколоночные макеты сайтов в CSS
+В данном уроке мы будем практиковаться создавать простые одноколоночные макеты сайтов. Давайте, например, сделаем вот такой макет:
+
+открыть в дочернем окне
+Приступим к реализации. Каждый макет как правило начинается с общего дива с названием wrapper, содержащего весь остальной сайт:
+
+<div id="wrapper">
+	
+</div>
+В нашем случае враппер будет выровнен по центу экрана:
+
+#wrapper {
+	width: 800px;
+	margin: 50px auto;
+}
+Также он будет иметь границу:
+
+#wrapper {
+	width: 800px;
+	margin: 50px auto;
+	border: 1px solid black;
+}
+Давайте теперь сделаем основную структуру страницы. Она будет состоять из меню и основного содержимого - контента:
+
+<div id="wrapper">
+	<div id="menu">
+		
+	</div>
+	<div id="content">
+		
+	</div>
+</div>
+Добавим содержимое наших блоков:
+
+<div id="wrapper">
+	<div id="menu">
+		<a href="#">link text 1</a>
+		<a href="#" class="active">link text 2</a>
+		<a href="#">link text 3</a>
+		<a href="#">link text 4</a>
+		<a href="#">link text 5</a>
+	</div>
+	<div id="content">
+		<h1>Proin tristique lorem</h1>
+		<p>
+			...
+		</p>
+		<p>
+			...
+		</p>
+	</div>
+</div>
+Теперь можно добавить стили нашим блокам. Давайте добавим стиль менюшке:
+
+#menu {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+	background-color: #484848;
+}
+#menu a {
+	margin: 0 5px;
+	padding: 15px 25px;
+	text-decoration: none;
+	color: #fff;
+	font: bold 14px Arial;
+}
+#menu a:hover, #menu a.active {
+	color: #484848;
+	background-color: #fff;
+}
+А теперь добавим стили элементам контента:
+
+#content {
+	padding: 0 30px 20px;
+}
+#content h1 {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+#content p {
+	padding: 0 10px;
+	margin-bottom: 5px;
+	font: 18px/1.3 Arial;
+	text-align: justify;
+}
+Можем теперь собрать весь код вместе:
+
+<div id="wrapper">
+	<div id="menu">
+		<a href="#">link text 1</a>
+		<a href="#" class="active">link text 2</a>
+		<a href="#">link text 3</a>
+		<a href="#">link text 4</a>
+		<a href="#">link text 5</a>
+	</div>
+	<div id="content">
+		<h1>Proin tristique lorem</h1>
+		<p>
+			...
+		</p>
+		<p>
+			...
+		</p>
+	</div>
+</div>
+#wrapper {
+	width: 800px;
+	margin: 50px auto;
+	border: 1px solid black;
+}
+
+#menu {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+	background-color: #484848;
+}
+#menu a {
+	margin: 0 5px;
+	padding: 15px 25px;
+	text-decoration: none;
+	color: #fff;
+	font: bold 14px Arial;
+}
+#menu a:hover, #menu a.active {
+	color: #484848;
+	background-color: #fff;
+}
+
+#content {
+	padding: 0 30px 20px;
+}
+#content h1 {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+#content p {
+	padding: 0 10px;
+	margin-bottom: 5px;
+	font: 18px/1.3 Arial;
+	text-align: justify;
+}
+Совет 1
+Удобнее всего давать отступы сверху вниз. К примеру, у нас есть менюшка и контент, а между ними - пустое пространство. Очевидно, что это пространство может быть сделано нижним отступом менюшки, верхним отступом контента, или их одновременным влиянием. В этом случае лучше задать нижний отступ менюшке, а контенту убрать верхний padding и margin по умолчанию для h1.
+
+Совет 2
+Потомки не должны формировать отступ между родителями. Например, у нас есть менюшка. Нижний отступ этой менюшки можно сформировать либо margin дива с меню, либо margin ссылок. Лучше выбрать первый вариант, так как ссылки не должны действовать через голову родителя.
+
+Совет 3
+Пусть между двумя элементами есть отступ и в данном случае визуально нет разницы, что выбрать для отступа - margin или padding. В этом случае выбирайте margin, так как именно он должен создавать отступы между элементами.
+	Проценты и единицы fr в CSS гридах
+Также наряду с fr можно использовать значения в %, которые также определяют какую часть контейнера будет занимать столбец. При этом сначала будет высчитываться размер столбца в %, а оставшееся свободное пространство разобьется на фракции:
+
+<div id="parent">
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+	<div>7</div>
+	<div>8</div>
+</div>
+#parent {
+	display: grid;
+	grid-template-columns: 50% 1fr 2fr 30%;
+	border: 2px solid #696989;
+	padding: 10px;
+	width: 600px;
+}
+#parent > div {
+	padding: 10px;
+	border: 1px solid #696989;
+}
+	Свойство float и родитель без текста в CSS
+Пусть теперь у нас есть див с классом parent без текста, но с двумя блоками-потомками с классом child:
+
+<div class="parent">
+	<div class="child">1</div>
+	<div class="child">2</div>
+</div>
+.parent {
+	width: 500px;
+	border: 1px solid red;
+	text-align: justify;
+}
+.child {
+	width: 200px;
+	height: 100px;
+	border: 1px solid green;
+}
 	Нюансы применения отрицательного значения z-index в CSS
 Если z-index у элемента не задан, то его значение следует трактовать как 0. Это значит, что элемент со значением z-index, равным -1, будет ниже элемента без z-index.
 
