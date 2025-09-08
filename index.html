@@ -52,7 +52,210 @@
 </ol>
 Текст страницы 
 <font color="#FF0000"></fon>
-<pre>Расстояние между столбцами и рядами в CSS гридах
+<pre> Практика на макетах на HTML и CSS
+Попрактикуемся в создании макетов, наполняя их содержимым. Давайте, например, сделаем вот такой макет:
+
+открыть в дочернем окне
+Для начала сделаем основную структуру макета:
+
+<div class="wrapper">
+	<header>
+		...
+	</header>
+	<div class="container">
+		<aside class="left">
+			left
+		</aside>
+		<main>
+			...
+		</main>
+		<aside class="right">
+			right
+		</aside>
+	</div>
+	<footer>
+		site.com
+	</footer>
+</div>
+Давайте теперь разберемся с хедером. Как видно на образце в хедере будет название сайта и менюшка. При этом эти блоки стоят на одинаковом расстоянии от левого края. Логично в таком случае объединить их общим родителем, двигая эти блоки как одно целое:
+
+<div class="wrapper">
+	<header>
+		<div class="block">
+			<div class="sitename"></div>
+			<nav></nav>
+		</div>
+	</header>
+</div>
+Добавим содержимое блоков хедера:
+
+<div class="wrapper">
+	<header>
+		<div class="block">
+			<div class="sitename">site.com</div>
+			<nav>
+				<a href="#">home</a>
+				<a href="#" class="active">blog</a>
+				<a href="#">photos</a>
+				<a href="#">about us</a>
+				<a href="#">contacts</a>
+			</nav>
+		</div>
+	</header>
+</div>
+Давайте теперь напишем стили блоков хедера. При этом не будем задавать высоту хедера - пусть он раздвигается своим содержимым:
+
+header {
+	border: 1px solid black;
+}
+.block {
+	margin: 20px 0 50px 220px;
+}
+.sitename {
+	margin-bottom: 10px;
+	font: 20px Arial;
+}
+nav {
+	display: flex;
+	width: 600px;
+	border: 1px solid black;
+}
+Напишем код, создающий три колонки в контейнере. При этом не будем задавать высоту контента - пусть она формируется его содержимым:
+
+.container {
+	display: flex;
+}
+main {
+	width: 660px;
+	padding: 20px;
+	border: 1px solid black;
+}
+.left {
+	width: 200px;
+	margin-right: 20px;
+	padding: 20px;
+	border: 1px solid black;
+}
+.right {
+	width: 200px;
+	margin-left: 20px;
+	padding: 20px;
+	border: 1px solid black;
+}
+Напишем теперь остальные стили нашего макета и получим решение нашей задачи:
+
+<div class="wrapper">
+	<header>
+		<div class="block">
+			<div class="sitename">site.com</div>
+			<nav>
+				<a href="#">home</a>
+				<a href="#" class="active">blog</a>
+				<a href="#">photos</a>
+				<a href="#">about us</a>
+				<a href="#">contacts</a>
+			</nav>
+		</div>
+	</header>
+	<div class="container">
+		<aside class="left">
+			left
+		</aside>
+		<main>
+			<h1>Our blog</h1>
+			<p>
+				...
+			</p>
+			<p>
+				...
+			</p>
+			<p>
+				...
+			</p>
+			<p>
+				...
+			</p>
+			<p>
+				...
+			</p>
+		</main>
+		<aside class="right">
+			right
+		</aside>
+	</div>
+	<footer>
+		site.com
+	</footer>
+</div>
+* {
+	box-sizing: border-box;
+}
+
+.wrapper {
+	width: 1100px;
+	margin: 30px auto;
+	border: 1px solid black;
+}
+header {
+	border: 1px solid black;
+}
+.container {
+	display: flex;
+}
+main {
+	width: 660px;
+	padding: 20px;
+	border: 1px solid black;
+}
+.left {
+	width: 200px;
+	margin-right: 20px;
+	padding: 20px;
+	border: 1px solid black;
+}
+.right {
+	width: 200px;
+	margin-left: 20px;
+	padding: 20px;
+	border: 1px solid black;
+}
+footer {
+	padding: 30px 0;
+	border: 1px solid black;
+	text-align: center;
+}
+
+.block {
+	margin: 20px 0 50px 220px;
+}
+.sitename {
+	margin-bottom: 10px;
+	font: 20px Arial;
+}
+nav {
+	display: flex;
+	width: 600px;
+	border: 1px solid black;
+}
+nav a {
+	padding: 10px;
+	color: blue;
+	text-decoration: none;
+	font: 15px Arial;
+}
+nav a:hover, nav a.active {
+	color: red;
+	text-decoration: underline;
+}
+main h1 {
+	font: 20px "Times New Roman";
+}
+main p {
+	margin: 10px 0;
+	text-align: justify;
+	font: 15px Arial;
+}
+Расстояние между столбцами и рядами в CSS гридах
 С помощью свойства gap можно одновременно задать расстояние между столбцами и рядами грида.
 
 Можно передать либо одно значение, либо два через пробел. Если передано одно значение, оно задает одновременно расстояние между столбцами и рядами. Если же передано два значения, то первое задает расстояние между рядами, а второе - между столбцами.
